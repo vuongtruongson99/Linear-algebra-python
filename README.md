@@ -1,77 +1,77 @@
-# Linear algebra library for Python  
+# Библиотека линейной алгебры для Python
 
-This module contains some useful classes and functions for dealing with linear algebra in python 2.  
+Этот модуль содержит несколько полезных классов и функций для работы с линейной алгеброй в Python. 
 
 ---
 
-## Overview  
+## Обзор
 
-- class Vector  
-    - This class represents a vector of arbitrary size and operations on it.  
+- Класс Vector  
+    - Этот класс представляет вектор произвольного размера и операции над ним.  
 
-    **Overview about the methods:**    
+    **Обзор методов:**    
         
-    - constructor(components : list) : init the vector  
-    - set(components : list) : changes the vector components 
-    - __str__() : toString method  
-    - component(i : int): gets the i-th component (start with 0)  
-    - size() : gets the size of the vector (number of components)  
-    - euclidLength() : returns the euclidean length of the vector.  
-    - operator + : vector addition  
-    - operator - : vector subtraction  
-    - operator * : scalar multiplication and dot product  
-    - operator == : returns true if the vectors are equal otherwise false.    
-    - copy() : copies this vector and returns it.  
-    - changeComponent(pos,value) : changes the specified component.  
-    - norm() : normalizes this vector and returns it.  
+    - constructor(components : list) : инициализировать вектор 
+    - set(components : list) : изменяет компоненты вектора
+    - __str__() : toString метод
+    - component(i : int): получает i-й компонент (начинается с 0)
+    - size() : получает размер вектора (количество компонентов) 
+    - euclidLength() : возвращает евклидову длину вектора.
+    - operator + : векторное сложение
+    - operator - : векторное вычитание
+    - operator * : скалярное умножение и скалярное произведение  
+    - operator == : возвращает истину, если векторы равны, в противном случае - ложь.   
+    - copy() : копирует этот вектор и возвращает его.
+    - changeComponent(pos,value) : изменяет указанный компонент. 
+    - norm() : нормализует этот вектор и возвращает его. 
 
-- function zeroVector(dimension)  
-    - returns a zero vector of 'dimension'  
-- function unitBasisVector(dimension,pos)  
-    - returns a unit basis vector with a One at index 'pos' (indexing at 0)  
-- function axpy(scalar,vector1,vector2)  
-    - computes the axpy operation  
-- function randomVector(N,a,b)
-    - returns a random vector of size N, with random integer components between 'a' and 'b'.
-- class Matrix
-    - This class represents a matrix of arbitrary size and operations on it.
+- Функция zeroVector(dimension)  
+    - возвращает нулевой вектор 'dimension'  
+- Функция unitBasisVector(dimension,pos)  
+    - возвращает единичный базисный вектор с единицей в индексе 'pos' (индексирование в 0)
+- Функция axpy(scalar,vector1,vector2)  
+    - вычисляет операцию axpy
+- Функция randomVector(N,a,b)
+    - возвращает случайный вектор размера N со случайными целочисленными компонентами между 'a' и 'b'.
+- Класс Matrix
+    - Этот класс представляет собой матрицу произвольного размера и операции над ней.
 
-    **Overview about the methods:**  
+    **Обзор методов:**  
     
-    -  __str__() : returns a string representation  
-    - operator * : implements the matrix vector multiplication  
-                   implements the matrix-scalar multiplication.  
-    - changeComponent(x,y,value) : changes the specified component.  
-    - component(x,y) : returns the specified component.  
-    - width() : returns the width of the matrix  
-    - height() : returns the height of the matrix  
-    - operator + : implements the matrix-addition.  
-    - operator - : implements the matrix-subtraction  
-    - operator == : returns true if the matrices are equal otherwise false.  
-- function squareZeroMatrix(N)  
-    - returns a square zero-matrix of dimension NxN  
-- function randomMatrix(W,H,a,b)  
-    - returns a random matrix WxH with integer components between 'a' and 'b'  
+    -  __str__() : возвращает строковое представление
+    - operator * : реализует матричное умножение векторов
+                   реализует матрично-скалярное умножение.
+    - changeComponent(x,y,value) : изменяет указанный компонент.
+    - component(x,y) : возвращает указанный компонент.
+    - width() : возвращает ширину матрицы  
+    - height() : возвращает высоту матрицы
+    - operator + : реализует матричное сложение. 
+    - operator - : реализует матричное вычитание
+    - operator == : возвращает истину, если матрицы равны, в противном случае - ложь.
+- Функция squareZeroMatrix(N)  
+    - возвращает квадратную нулевую матрицу размерности NxN 
+- Функция randomMatrix(W,H,a,b)  
+    - возвращает случайную матрицу WxH с целочисленными компонентами между 'a' и 'b'  
 ---
 
-## Documentation  
+## Документация
 
-The module is well documented. You can use the python in-built ```help(...)``` function.  
-For instance: ```help(Vector)``` gives you all information about the Vector-class.  
-Or ```help(unitBasisVector)``` gives you all information you need about the  
-global function ```unitBasisVector(...)```. If you need information about a certain  
-method you type ```help(CLASSNAME.METHODNAME)```.  
-
----
-
-## Usage  
-
-You will find the module in the **src** directory called ```lib.py```. You need to  
-import this module in your project. Alternatively you can also use the file ```lib.pyc``` in python-bytecode.   
+Модуль хорошо документирован. Вы можете использовать встроенный в Python ```help(...)``` функция.
+Например: ```help(Vector)``` дает вам всю информацию о классе Vector.  
+или ```help(unitBasisVector)``` дает вам всю необходимую информацию о
+глобальная функция ```unitBasisVector(...)```. Если вам нужна информация об определенном
+метод, который вы вводите ```help(CLASSNAME.METHODNAME)```.  
 
 ---
 
-## Tests  
+## Использование
 
-In the **src** directory you can also find the test-suite, its called ```tests.py```.  
-The test-suite uses the built-in python-test-framework **unittest**.  
+Вы найдете модуль в **src** каталог называется ```lib.py```. Вам необходимо  
+импортировать этот модуль в свой проект. В качестве альтернативы вы также можете использовать файл ```lib.pyc``` в байт-коде python.   
+
+---
+
+## Тесты
+
+В каталоге **src** вы также можете найти набор тестов, который называется ```tests.py```.  
+Набор тестов использует встроенный python-test-framework **unittest**.  
